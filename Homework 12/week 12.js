@@ -17,17 +17,14 @@ var squareY = 60;
 var squareXSpeed;
 var squareYSpeed;
 
+var mouseShapeX = mouseX
+var mouseShapeY = mouseY
+
 function setup()
 {
     createCanvas (500, 600);
 
-    //obtacles movement
-
-    circleXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-    circleYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-
-    squareXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-    squareYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+   
     createCharacter(200,350);
 }
 
@@ -40,6 +37,8 @@ createBorders(10);
 
 //exit message
 createExit(); 
+
+mousePressed();
 
 //creates player
 drawCharacter();
@@ -54,7 +53,7 @@ characterMovementsquare();
 
 characterMovement1();
 
-mouseClicked();
+
 }
 
 function createExit()
@@ -63,12 +62,6 @@ textSize(16);
 fill (0,0,0);
 text("EXIT", width-50,height-50);
 }
-
-function mouseClicked()
-{  
-    fill(154,154,154)
-    circle(mouseX, mouseY, 25);
-} 
 
 function characterMovementsquare()
 {
@@ -155,6 +148,14 @@ function characterMovement()
     }  
 }
 
+function mousePressed()
+{  
+    fill(154,154,154)
+    circle(mouseX, mouseY, 25);
+    return false;
+} 
+
+
 //obstacles 
 function drawCharacter1()
 {
@@ -192,5 +193,6 @@ function createBorders(thickness)
     // right upper border
     rect(width-thickness,0,thickness,height-50);
 }
+
 
 
