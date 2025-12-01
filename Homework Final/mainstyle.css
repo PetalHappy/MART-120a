@@ -1,0 +1,5 @@
+
+body {background-color: gray;}
+h1 {color: navy;}
+.specificStyle{font-family:Georgia; color:rgb(75, 55, 150)}
+#specificColor{color:purple; font-size:50px;}
